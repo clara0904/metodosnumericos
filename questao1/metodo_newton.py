@@ -19,14 +19,14 @@ def newton(x0, err, max_int):
             return None
        
         x1 = x0 - f(x0) / df(x0)
-        print(f"{k} interacao: x1:{x0} x2: {x1}")
+        print(f"iteração = {k}   | x0 = {x0:.6f}  | x1 = {x1:.6f}")
 
-        if abs(f(x1)) < err or abs(x1 - x0) < 0.001 or k >= max_int:
+        if abs(f(x1)) < err or abs(x1 - x0) < 10**(-4) or k >= max_int:
             print("Raiz: ", x1)
             return x1
            
         x0 = x1
         k += 1
 
-
-print(newton(2.5, 000.1, 25))
+x0 = (2 + 3) / 2
+newton(x0, 10**(-4), 25)
