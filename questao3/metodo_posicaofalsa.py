@@ -1,18 +1,24 @@
+#Equação principal f(x) = ln(x) + x² - 3
+#Intervalo I = [1, 2]
 import math
 
+#Definição da função principal
 def f(x):
     return math.log(x) + x**2 - 3
 
+#Função do metodo de Posição Falsa
 def PosicaoFalsa(a, b, erro, iterMax):
     Fa = f(a)
     Fb = f(b)
-
+    
+    #Verificção se há raiz no intervalo
     if (Fa * Fb) > 0:
         print("Erro: função não muda de sinal entre a e b")
         return None
 
     itervX = abs(b - a)
-
+    
+    #Verifica se Fa ou Fb está abixo do erro
     if abs(Fa) < erro:
         return a
 
@@ -21,7 +27,8 @@ def PosicaoFalsa(a, b, erro, iterMax):
 
     k = 0
     raiz = None
-
+    
+    #Laço das iteraçãoes, irá até a quantidade maxima de iterações definida
     while k < iterMax:
         x = (a * Fb - b * Fa) / (Fb - Fa) 
         Fx = f(x)
@@ -42,6 +49,7 @@ def PosicaoFalsa(a, b, erro, iterMax):
 
     return x
 
+#Chamada da função do método da Posição Falsa
 raiz = PosicaoFalsa(1, 2, 10**(-4), 25)
 if raiz is not None:
     print(f"A raiz aproximada é: {raiz}")
