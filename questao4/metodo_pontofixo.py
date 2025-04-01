@@ -12,7 +12,7 @@ def pontofixo(x0, erro, maxInter):
     k = 1
     while k <= maxInter:
         x1 = g(x0)
-        print(f"Iteração {k}: x1={x1:.6f} | x0={x0:.6f} | |x1 - x0|={abs(x1 - x0):.6f} | f(x1)={f(x1):.6f}")
+        print(f"Iteração {k}: x1 = {x1:.6f} | x0 = {x0:.6f} | |x1 - x0| = {abs(x1 - x0):.6f} | f(x1) = {f(x1):.6f}")
 
         if abs(f(x1)) < erro or abs(x1 - x0) < erro:
             print(f"Aproximação da raiz: {x1}")
